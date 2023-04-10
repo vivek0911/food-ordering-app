@@ -12,7 +12,7 @@ function ProductCard({ product }) {
         <img
           alt={product.alt}
           aria-hidden="true"
-          className="max-h-96 w-full"
+          className="max-h-96 w-full cursor-pointer"
           src={product.image}
           onClick={() => navigate(Path.ProductDetails(product.id))}
         ></img>
