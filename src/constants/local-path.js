@@ -8,7 +8,7 @@ const PathAuth = {
 
 const PathProduct = {
   Products: '/products',
-  ProductDetails: '/product/:productId',
+  ProductDetails: (paramId) => `/product/${paramId}`,
 }
 
 const Path = {

@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types'
 import { useNavigate } from 'react-router-dom'
 
+import Path from '@constants/local-path'
+
 function ProductCard({ product }) {
   const navigate = useNavigate()
 
@@ -12,7 +14,7 @@ function ProductCard({ product }) {
           aria-hidden="true"
           className="max-h-96 w-full"
           src={product.image}
-          onClick={() => navigate(`/product/${product.id}`)}
+          onClick={() => navigate(Path.ProductDetails(product.id))}
         ></img>
       </div>
       <div>
