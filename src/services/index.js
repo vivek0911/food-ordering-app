@@ -1,5 +1,4 @@
 import axios from 'axios'
-import { toast } from 'react-toastify'
 
 const axiosInstance = axios.create({
   baseURL: process.env.REACT_APP_API_URL,
@@ -29,9 +28,8 @@ axiosInstance.interceptors.response.use(
   },
   function (error) {
     // Any status codes that falls outside the range of 2xx cause this function to trigger
-    const { message, response: { data } = {} } = error
-    toast.error(message)
-    return Promise.reject(data)
+    const { message } = error
+    return Promise.reject(message)
   }
 )
 

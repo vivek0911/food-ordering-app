@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import './index.css'
 import { Provider } from 'react-redux'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
@@ -14,6 +13,9 @@ import App from './app'
 import ErrorPage from './error-page'
 import reportWebVitals from './reportWebVitals'
 import store from '@store'
+
+import './index.css'
+import 'react-toastify/dist/ReactToastify.css'
 
 const router = createBrowserRouter([
   {
@@ -38,8 +40,8 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <RouterProvider router={router} />
-      <ToastContainer autoClose={5000} position="top-right" />
     </Provider>
+    <ToastContainer autoClose={5000} position="top-right" />
   </React.StrictMode>
 )
 

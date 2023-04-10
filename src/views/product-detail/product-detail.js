@@ -1,19 +1,30 @@
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
+import { toast } from 'react-toastify'
 
-import { getProductDetailById } from '@store/product.slice'
+import productSlice, { getProductDetailById } from '@store/product.slice'
 
 import Button, { ButtonVariant } from '@common/button'
 
 function ProductDetail() {
   const { productId } = useParams()
   const dispatch = useDispatch()
-  const productDetail = useSelector((s) => s.product.productDetails)
+  const { productDetail, error } = useSelector((s) => ({
+    productDetail: s.product.productDetails,
+    error: s.product.error,
+  }))
 
   useEffect(() => {
     if (productId) dispatch(getProductDetailById(productId))
   }, [dispatch, productId])
+
+  useEffect(() => {
+    if (error) {
+      toast.error(error)
+      productSlice.actions.setError(null)
+    }
+  }, [error])
 
   return (
     <div className="grid grid-cols-2 gap-x-3">

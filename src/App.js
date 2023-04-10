@@ -1,6 +1,6 @@
 import { Link, Outlet } from 'react-router-dom'
 
-import Path from './constants/local-path'
+import Path from '@constants/local-path'
 
 function App() {
   return (

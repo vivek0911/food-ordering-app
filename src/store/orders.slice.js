@@ -7,7 +7,7 @@ export const initialState = {
 }
 
 const slice = createSlice({
-  name: 'product',
+  name: 'order',
   initialState,
   reducers: {
     setProgress: (state, action) => {
