@@ -55,7 +55,7 @@ function ProductDetail() {
           variant={ButtonVariant.Secondary}
           onClick={() => {}}
         >
-          Add to cart
+          Add to basket
         </Button>
       </div>
     </div>

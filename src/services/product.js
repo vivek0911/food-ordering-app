@@ -1,5 +1,12 @@
 import axiosInstance from '.'
 
-export const getAllProducts = () => axiosInstance.get('/products')
+const productApiPath = {
+  product: '/products',
+  favourite: '/favourite',
+  basket: '/basket',
+}
 
-export const getProductDetailById = (id) => axiosInstance.get(`/products/${id}`)
+export const getAllProducts = () => axiosInstance.get(productApiPath.product)
+
+export const getProductDetailById = (id) =>
+  axiosInstance.get(`${productApiPath.product}/${id}`)
